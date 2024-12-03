@@ -42,9 +42,9 @@ fn main() -> anyhow::Result<()> {
         })
         .collect::<Vec<_>>();
 
-    let ans = levels.iter().fold(0, |acc, cur| {
-        is_level_okay(cur, None) as usize + acc
-    });
+    let ans = levels
+        .iter()
+        .fold(0, |acc, cur| is_level_okay(cur, None) as usize + acc);
 
     println!("Part 1 ans: {ans}");
 

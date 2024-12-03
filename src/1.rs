@@ -21,8 +21,7 @@ fn main() -> anyhow::Result<()> {
     l1.sort();
     l2.sort();
 
-    let ans = std::iter::zip(l1.clone(), l2.clone())
-        .fold(0, |acc, (x, y)| acc + (x - y).abs());
+    let ans = std::iter::zip(l1.clone(), l2.clone()).fold(0, |acc, (x, y)| acc + (x - y).abs());
 
     println!("Part 1 ans: {ans}");
 
