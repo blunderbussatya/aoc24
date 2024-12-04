@@ -7,8 +7,8 @@ fn dfs(
     y: i32,
     d: usize,
     i: usize,
-    pat: &Vec<char>,
-    mat: &Vec<Vec<char>>,
+    pat: &[char],
+    mat: &[Vec<char>],
     // can use a hashmap but I want to reminisce my good old global array based CP days
     dp: &mut Vec<Vec<Vec<Vec<Option<i64>>>>>,
 ) -> i64 {
@@ -51,7 +51,7 @@ fn dfs(
     ans
 }
 
-fn conv2d(mat: &Vec<Vec<char>>, mask: &Vec<Vec<Option<char>>>) -> u64 {
+fn conv2d(mat: &[Vec<char>], mask: &[Vec<Option<char>>]) -> u64 {
     let (mm, mn) = (mask.len(), mask[0].len());
     let (m, n) = (mat.len(), mat[0].len());
     let mut ans = 0;
