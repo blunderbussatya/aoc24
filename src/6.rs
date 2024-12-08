@@ -27,9 +27,11 @@ fn get_cycle(
         ns.insert((cur_x, cur_y));
         let (xx, yy) = DIRS[dir];
         let (nx, ny) = (cur_x as i32 + xx, cur_y as i32 + yy);
+        // we are out of bounds
         if nx < 0 || ny < 0 || nx >= n as i32 || ny >= m as i32 {
             break (ns.len(), false);
         }
+        // we got a cycle
         if vis.contains(&(dir, nx as usize, ny as usize)) {
             break (ns.len(), true);
         }
