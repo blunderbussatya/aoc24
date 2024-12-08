@@ -46,7 +46,7 @@ fn get_topo_ordering(g: HashMap<i64, HashSet<i64>>) -> (HashMap<i64, i64>, Vec<i
 
 fn create_graph(edges: &Vec<(i64, i64)>) -> HashMap<i64, HashSet<i64>> {
     edges.iter().fold(HashMap::new(), |mut g, (u, v)| {
-        g.entry(*u).or_insert(HashSet::new()).insert(*v);
+        g.entry(*u).or_default().insert(*v);
         g
     })
 }
@@ -75,7 +75,7 @@ fn main() -> anyhow::Result<()> {
 
     let (oq, nq): (Vec<_>, Vec<_>) = queries.into_iter().partition(|v| {
         let mut ok = true;
-        for (i, val) in v.into_iter().enumerate() {
+        for (i, val) in v.iter().enumerate() {
             for j in 0..i {
                 if let Some(gx) = g.get(val) {
                     if gx.contains(&v[j]) {

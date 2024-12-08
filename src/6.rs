@@ -13,7 +13,7 @@ fn is_guard(ch: char) -> Option<usize> {
 }
 
 fn get_cycle(
-    mat: &Vec<Vec<char>>,
+    mat: &[Vec<char>],
     extra_pt: Option<(usize, usize)>,
     cur_pos: (usize, usize, usize),
 ) -> (usize, bool) {
