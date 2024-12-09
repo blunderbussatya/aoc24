@@ -44,7 +44,7 @@ fn get_topo_ordering(g: HashMap<i64, HashSet<i64>>) -> (HashMap<i64, i64>, Vec<i
     (ordering, order_vec)
 }
 
-fn create_graph(edges: &Vec<(i64, i64)>) -> HashMap<i64, HashSet<i64>> {
+fn create_graph(edges: &[(i64, i64)]) -> HashMap<i64, HashSet<i64>> {
     edges.iter().fold(HashMap::new(), |mut g, (u, v)| {
         g.entry(*u).or_default().insert(*v);
         g
@@ -64,7 +64,7 @@ fn main() -> anyhow::Result<()> {
             let (a, b) = o.split_once('|').unwrap();
             (a.parse().unwrap(), b.parse().unwrap())
         })
-        .collect();
+        .collect::<Vec<_>>();
 
     let g = create_graph(&edges);
 
