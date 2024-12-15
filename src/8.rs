@@ -2,6 +2,7 @@ use std::{
     collections::{HashMap, HashSet},
     io::Read,
 };
+const DIRS: [(i32, i32); 4] = [(0, 1), (1, 0), (0, -1), (-1, 0)];
 
 fn main() -> anyhow::Result<()> {
     let filepath = "tests/8/1.txt";
