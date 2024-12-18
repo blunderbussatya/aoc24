@@ -47,6 +47,7 @@ fn main() -> anyhow::Result<()> {
 
     let ans = simulate(&pts, (71, 71), 1024).unwrap();
     println!("Part 1 ans: {ans}");
+
     let mut start = 0;
     let mut end = pts.len() - 1;
     let mut idx = end;
