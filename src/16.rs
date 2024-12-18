@@ -85,7 +85,7 @@ fn main() -> anyhow::Result<()> {
     }
     let ans = inpath.len();
 
-    println!("Part 2 {ans}");
+    println!("Part 2 ans {ans}");
 
     Ok(())
 }
