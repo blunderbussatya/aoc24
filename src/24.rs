@@ -57,7 +57,7 @@ fn main() -> anyhow::Result<()> {
     let ans = zs
         .into_iter()
         .enumerate()
-        .fold(0, |acc, (idx, bit)| acc + (1i64 << idx) * (*bit as i64));
+        .fold(0, |acc, (idx, bit)| acc + (1i64 << idx) * (bit as i64));
 
     println!("{ans}");
 
