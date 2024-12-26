@@ -47,6 +47,7 @@ fn main() -> anyhow::Result<()> {
         vals.insert(op3, vx);
         rels.remove(&cur);
     }
+
     let zs = vals
         .into_iter()
         .filter(|(k, _)| k.starts_with('z'))
